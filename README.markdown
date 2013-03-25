@@ -1,28 +1,10 @@
-# Faster Development of CodeIgniter 2.0 Apps
+# Habitech PMS
 
-<div style="float: right; margin: 0 20px 20px 0">
-	<a href='http://www.pledgie.com/campaigns/15326'><img alt='Click here to lend your support to: Bonfire - faster CodeIgniter development and make a donation at www.pledgie.com !' src='http://pledgie.com/campaigns/15326.png?skin_name=chrome' border='0' /></a>
-</div>
-
-That's Bonfire's goal: provide a solid base off of which to build your new web applications. It's not a CMS. Instead, it's a springboard to build off of with many of the tools you wish you had on projects but never took the time to build.
-
-All wrapped up in an elegant interface that will make you proud when you hand the project over to your client.
 
 ## Current Features
+- User Registration
+- Property Listing
 
-- Very flexible template/theme system, capable of Wordpress-like parent/child themes.
-- Uses Twitter Bootstrap for the Admin and Default themes
-- Fully modular and built around HMVC
-- 4 ‘contexts’ ready for your code: Content, Reports, Settings and Developer Tools
-- Database backup and maintenance interface
-- Role-based access control
-- Built-in users/auth system
-- Code Builder with CRUD generation
-- Simple email queue system
-- 2-step installer
-- Uses multiple-environment config files.
-- Migration-ready (using either raw SQL or Database Forge commands)
-- Log view/maintenance
 
 ## Road Map
 
@@ -42,10 +24,3 @@ Let's make this the best kick-start to any CodeIgniter project.
 
 ## The Team
 
-The Bonfire Team is made up from developers around the world interested in making Bonfire a better kickstart for your [CodeIgniter](http://codeigniter.com) projects.
-
-- [Lonnie Ezell](http://lonnieezell.com) - Lead Developer
-- [Sean Downey](https://github.com/seandowney)
-- [Shawn Crigger](https://github.com/svizion)
-- [Alan Jenkins](https://github.com/sourcejedi)
-- [Mat Whitney](https://github.com/mwhitneysdsu)
