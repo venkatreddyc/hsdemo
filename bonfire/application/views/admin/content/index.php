@@ -1,6 +1,4 @@
-<h1>This Page Intentionally Left Blank</h1>
-
-<p>As of Bonfire <?php echo BONFIRE_VERSION ?>, this page has no default content.</p>
+<h1>Habitech PMS</h1>
 
 <p>This is your playground.</p>
 
