@@ -39,7 +39,7 @@
 					<div class="control-group <?php echo iif( form_error('country') , 'error'); ?>">
 						<label class="control-label" for="country"><?php echo lang('user_meta_country'); ?></label>
 						<div class="controls">
-							<?php echo country_select(set_value($field['name'], isset($user->$field['name']) ? $user->$field['name'] : 'US'), 'US', 'country', 'span6 chzn-select'); ?>
+							<?php echo country_select(set_value($field['name'], isset($user->$field['name']) ? $user->$field['name'] : 'IN'), 'IN', 'country', 'span6 chzn-select'); ?>
 
 						</div>
 					</div>

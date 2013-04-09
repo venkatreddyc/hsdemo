@@ -5,7 +5,6 @@
 
 <div class="container-fluid body">
         <?php echo Template::message(); ?>
-
         <?php echo Template::yield(); ?>
 </div>
 
