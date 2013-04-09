@@ -3,10 +3,10 @@
     <footer class="footer">
     	<div class="container">
 	        <?php if (ENVIRONMENT == 'development') :?>
-				<p style="float: right; margin-right: 80px;">Page rendered in {elapsed_time} seconds, using {memory_usage}.</p>
+				
 			<?php endif; ?>
 	
-			<p> Copy Rights @ 2013 - Home Suraksha Powered Proudly by <a href="http://cibonfire.com" target="_blank">Bonfire <?php echo BONFIRE_VERSION ?></a></p>
+			<p> Copy Rights @ 2012- 2013 - PMS App is  Powered by <a href="http://habitechsoft.com" target="_blank">Habitech </a></p>
 		</div>
 	</footer>
 	
