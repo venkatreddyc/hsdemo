@@ -182,10 +182,12 @@ $lang['us_account_activated_admin']	= 'Administrative account activation.';
 $lang['us_account_deactivated_admin']	= 'Administrative account deactivation.';
 $lang['us_active']					= 'Active.';
 $lang['us_inactive']				= 'Inactive.';
+
 //email subjects
 $lang['us_email_subj_activate']		= 'Activate Your membership';
 $lang['us_email_subj_pending']		= 'Registration Complete. Activation Pending.';
 $lang['us_email_thank_you']			= 'Thank you for registering! ';
+
 // Activation Statuses
 $lang['us_registration_fail'] 		= 'Registration did not complete successfully. ';
 $lang['us_check_activate_email'] 	= 'Please check your email for instructions to activate your account.';
@@ -196,6 +198,7 @@ $lang['us_account_active_login'] 	= 'Your account is active and you can now logi
 $lang['us_account_reg_complete'] 	= 'Registration to [SITE_TITLE] completed!';
 $lang['us_active_status_changed'] 	= 'The user status was successfully changed.';
 $lang['us_active_email_sent'] 		= 'Activation email was sent.';
+
 // Activation Errors
 $lang['us_err_no_id'] 				= 'No User ID was received.';
 $lang['us_err_status_error'] 		= 'The users status was not changed: ';

@@ -42,7 +42,6 @@ $lang['bf_language_help']		= 'Choose the languages available to the user.';
 //--------------------------------------------------------------------
 // ! AUTH SETTINGS
 //--------------------------------------------------------------------
-
 $lang['bf_security']			= 'Security';
 $lang['bf_login_type']			= 'Login Type';
 $lang['bf_login_type_email']            = 'Email Only';
@@ -64,7 +63,6 @@ $lang['bf_display_name']		= 'Display Name';
 //--------------------------------------------------------------------
 // ! CRUD SETTINGS
 //--------------------------------------------------------------------
-
 $lang['bf_home_page']			= 'Home Page';
 $lang['bf_pages']		        = 'Pages';
 $lang['bf_enable_rte']			= 'Enable RTE for pages?';
@@ -72,7 +70,6 @@ $lang['bf_rte_type']			= 'RTE Type';
 $lang['bf_searchable_default']          = 'Searchable by default?';
 $lang['bf_cacheable_default']           = 'Cacheable by default?';
 $lang['bf_track_hits']			= 'Track Page Hits?';
-
 $lang['bf_action_save']			= 'Save';
 $lang['bf_action_delete']		= 'Delete';
 $lang['bf_action_cancel']		= 'Cancel';
@@ -95,16 +92,12 @@ $lang['bf_action_ban']			= 'Ban';
 //--------------------------------------------------------------------
 // ! SETTINGS LIB
 //--------------------------------------------------------------------
-
 $lang['bf_do_check']			= 'Check for updates?';
 $lang['bf_do_check_edge']		= 'Must be enabled to see bleeding edge updates as well.';
-
 $lang['bf_update_show_edge']	= 'View bleeding edge updates?';
 $lang['bf_update_info_edge']	= 'Leave unchecked to only check for new tagged updates. Check to see any new commits to the official repository.';
-
 $lang['bf_ext_profile_show']	= 'Does User accounts have extended profile?';
 $lang['bf_ext_profile_info']	= 'Check "Extended Profiles" to have extra profile meta-data available option(wip), omiting some default bonfire fields (eg: address).';
-
 $lang['bf_yes']					= 'Yes';
 $lang['bf_no']					= 'No';
 $lang['bf_none']				= 'None';
@@ -114,9 +107,7 @@ $lang['bf_or']					= 'or';
 $lang['bf_size']				= 'Size';
 $lang['bf_files']				= 'Files';
 $lang['bf_file']				= 'File';
-
 $lang['bf_with_selected']		= 'With selected';
-
 $lang['bf_env_dev']				= 'Development';
 $lang['bf_env_test']			= 'Testing';
 $lang['bf_env_prod']			= 'Production';
@@ -180,7 +171,6 @@ $lang['bf_context_developer']	= 'Developer';
 //--------------------------------------------------------------------
 $lang['bf_act_settings_saved']	= 'App settings saved from';
 $lang['bf_unauthorized_attempt']= 'unsuccessfully attempted to access a page which required the following permission "%s" from ';
-
 $lang['bf_keyboard_shortcuts']		= 'Available keyboard shortcuts:';
 $lang['bf_keyboard_shortcuts_none']	= 'There are no keyboard shortcuts assigned.';
 $lang['bf_keyboard_shortcuts_edit']	= 'Update the keyboard shortcuts';
@@ -212,11 +202,11 @@ $lang['bf_password_length']                = 'Password Length';
 //--------------------------------------------------------------------
 // User Meta examples
 //--------------------------------------------------------------------
-
 $lang['user_meta_street_name']	= 'Street Name';
 $lang['user_meta_type']			= 'Type';
 $lang['user_meta_country']		= 'Country';
 $lang['user_meta_state']		= 'State';
+
 
 // Activation
 //--------------------------------------------------------------------

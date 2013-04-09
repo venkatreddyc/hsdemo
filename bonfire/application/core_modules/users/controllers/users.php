@@ -256,13 +256,16 @@ class Users extends Front_Controller
 				$meta_data = array();
 				foreach ($meta_fields as $field)
 				{
-					if ((!isset($field['admin_only']) || $field['admin_only'] === FALSE
+                                    // $meta_data[$field['name']] = $this->input->post($field['name']);
+					 
+                                          if ((!isset($field['admin_only']) || $field['admin_only'] === FALSE
 						|| (isset($field['admin_only']) && $field['admin_only'] === TRUE
 							&& isset($this->current_user) && $this->current_user->role_id == 1))
 						&& (!isset($field['frontend']) || $field['frontend'] === TRUE))
 					{
 						$meta_data[$field['name']] = $this->input->post($field['name']);
 					}
+                                        
 				}
 
 				// now add the meta is there is meta data

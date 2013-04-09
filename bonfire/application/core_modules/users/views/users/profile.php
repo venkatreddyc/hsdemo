@@ -4,44 +4,45 @@
 		<h1><?php echo lang('us_edit_profile'); ?></h1>
 	</div>
 
-<?php if (auth_errors() || validation_errors()) : ?>
-<div class="row-fluid">
-	<div class="span8 offset2">
-		<div class="alert alert-error fade in">
-		  <a data-dismiss="alert" class="close">&times;</a>
-			<?php echo auth_errors() . validation_errors(); ?>
-		</div>
-	</div>
-</div>
-<?php endif; ?>
+    <?php if (auth_errors() || validation_errors()) : ?>
+        <div class="row-fluid">
+            <div class="span8 offset2">
+                    <div class="alert alert-error fade in">
+                      <a data-dismiss="alert" class="close">&times;</a>
+                            <?php echo auth_errors() . validation_errors(); ?>
+                            <?php echo "Test for Error Message"; ?>
+                    </div>
+            </div>
+        </div>
+    <?php endif; ?>
 
-<?php if (isset($user) && $user->role_name == 'Banned') : ?>
-<div class="row-fluid">
-	<div class="span8 offset2">
-		<div data-dismiss="alert" class="alert alert-error fade in">
-		  <a data-dismiss="alert" class="close">&times;</a>
-			<?php echo lang('us_banned_admin_note'); ?>
-		</div>
-	</div>
-</div>
-<?php endif; ?>
+    <?php if (isset($user) && $user->role_name == 'Banned') : ?>
+        <div class="row-fluid">
+                <div class="span8 offset2">
+                        <div data-dismiss="alert" class="alert alert-error fade in">
+                          <a data-dismiss="alert" class="close">&times;</a>
+                                <?php echo lang('us_banned_admin_note'); ?>
+                        </div>
+                </div>
+        </div>
+    <?php endif; ?>
 
-<div class="row-fluid">
-	<div class="span8 offset2">
-		<div class="alert alert-info fade in">
-		  <a data-dismiss="alert" class="close">&times;</a>
-			<h4 class="alert-heading"><?php echo lang('bf_required_note'); ?></h4>
-			<?php if (isset($password_hints)):?>
-				<?php echo $password_hints; ?>
-			<?php endif;?>
-		</div>
-	</div>
-</div>
+    <div class="row-fluid">
+            <div class="span8 offset2">
+                    <div class="alert alert-info fade in">
+                      <a data-dismiss="alert" class="close">&times;</a>
+                            <h4 class="alert-heading"><?php echo lang('bf_required_note'); ?></h4>
+                            <?php if (isset($password_hints)):?>
+                                    <?php echo $password_hints; ?>
+                            <?php endif;?>
+                    </div>
+            </div>
+    </div>
 
-<div class="row-fluid">
+    <div class="row-fluid">
 	<div class="span12">
 
-<?php echo form_open($this->uri->uri_string(), array('class' => "form-horizontal", 'autocomplete' => 'off')); ?>
+    <?php echo form_open($this->uri->uri_string(), array('class' => "form-horizontal", 'autocomplete' => 'off')); ?>
 
 	<div class="control-group <?php echo iif( form_error('display_name') , 'error') ;?>">
 		<label class="control-label" for="display_name"><?php echo lang('bf_display_name'); ?></label>
