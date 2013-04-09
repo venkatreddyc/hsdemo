@@ -1,12 +1,15 @@
 <?php
 
 // Check if the install folder exists - if so then show the installer app
+
 if (is_dir(dirname(__FILE__).'/install') == true)
 {
 	header('Location: install');
 	exit;
 }
 
+
+ 
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -25,6 +28,7 @@ if (is_dir(dirname(__FILE__).'/install') == true)
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
+ 
 	define('ENVIRONMENT', 'development');
 
 /*
@@ -80,7 +84,8 @@ if (is_dir(dirname(__FILE__).'/install') == true)
  * as this file.
  *
  */
-	$system_path = "bonfire/codeigniter";
+        
+        $system_path = "bonfire/codeigniter";
 
 /*
  *---------------------------------------------------------------
