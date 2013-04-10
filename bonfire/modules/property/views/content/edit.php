@@ -6,14 +6,17 @@
  <?php echo validation_errors(); ?>
 </div>
 <?php endif; ?>
+
 <?php // Change the css classes to suit your needs
 if( isset($property) ) {
     $property = (array)$property;
 }
 $id = isset($property['pid']) ? $property['pid'] : '';
 ?>
+
 <div class="admin-box">
-    <h3>property</h3>
+    <h3>Edit Property Information </h3>
+    
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
         <div class="control-group <?php echo form_error('property_username') ? 'error' : ''; ?>">
@@ -59,6 +62,13 @@ $id = isset($property['pid']) ? $property['pid'] : '';
         <span class="help-inline"><?php echo form_error('property_file'); ?></span>
         </div>
 
+        <div class="control-group <?php echo form_error('property_landmark') ? 'error' : ''; ?>">
+            <?php echo form_label('landmark'. lang('bf_form_label_required'), 'property_landmark', array('class' => "control-label") ); ?>
+            <div class='controls'>
+        <input id="property_info" type="text" name="property_landmark" maxlength="255" value="<?php echo set_value('property_landmark', isset($property['property_landmark']) ? $property['property_landmark'] : ''); ?>"  />
+        <span class="help-inline"><?php echo form_error('property_landmark'); ?></span>
+        </div>
+            
 
         </div>
 

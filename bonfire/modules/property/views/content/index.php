@@ -12,11 +12,14 @@
 					<th class="column-check"><input class="check-all" type="checkbox" /></th>
 					<?php endif;?>
 					
-					<th>username</th>
-					<th>address</th>
-					<th>location</th>
-					<th>info</th>
+					<th>User Name</th>
+					<th>Property Address</th>
+					<th>City</th>
+					<th>Property Info</th>
 					<th>file</th>
+                                        <th>Property Landmark</th>
+                                        <th>Property Map URL </th>
+                                        
 				</tr>
 			</thead>
 
@@ -61,6 +64,11 @@
 				<td><?php echo $record->property_location?></td>
 				<td><?php echo $record->property_info?></td>
 				<td><?php echo $record->property_file?></td>
+                                
+                                <td><?php echo $record->property_landmark?></td>
+                                <td> <a href="<?php echo $record->property_mapurl?>" > Map Location </a></td>
+                              
+                                
 				</tr>
 			<?php endforeach; ?>
 			<?php else: ?>

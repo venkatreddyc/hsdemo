@@ -7,11 +7,13 @@
 </div>
 <?php endif; ?>
 <?php // Change the css classes to suit your needs
+
 if( isset($property) ) {
     $property = (array)$property;
 }
 $id = isset($property['pid']) ? $property['pid'] : '';
 ?>
+
 <div class="admin-box">
     <h3>property</h3>
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
