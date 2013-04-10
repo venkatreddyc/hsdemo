@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['visitphotos_manage']			= 'Manage VisitPhotos';
+$lang['visitphotos_edit']				= 'Edit';
+$lang['visitphotos_true']				= 'True';
+$lang['visitphotos_false']				= 'False';
+$lang['visitphotos_create']			= 'Create';
+$lang['visitphotos_list']				= 'List';
+$lang['visitphotos_new']				= 'New';
+$lang['visitphotos_edit_text']			= 'Edit this to suit your needs';
+$lang['visitphotos_no_records']			= 'There aren\'t any visitphotos in the system.';
+$lang['visitphotos_create_new']			= 'Create a new VisitPhotos.';
+$lang['visitphotos_create_success']			= 'VisitPhotos successfully created.';
+$lang['visitphotos_create_failure']			= 'There was a problem creating the visitphotos: ';
+$lang['visitphotos_create_new_button']			= 'Create New VisitPhotos';
+$lang['visitphotos_invalid_id']			= 'Invalid VisitPhotos ID.';
+$lang['visitphotos_edit_success']			= 'VisitPhotos successfully saved.';
+$lang['visitphotos_edit_failure']			= 'There was a problem saving the visitphotos: ';
+$lang['visitphotos_delete_success']			= 'record(s) successfully deleted.';
+$lang['visitphotos_delete_failure']			= 'We could not delete the record: ';
+$lang['visitphotos_delete_error']			= 'You have not selected any records to delete.';
+$lang['visitphotos_actions']			= 'Actions';
+$lang['visitphotos_cancel']			= 'Cancel';
+$lang['visitphotos_delete_record']			= 'Delete this VisitPhotos';
+$lang['visitphotos_delete_confirm']			= 'Are you sure you want to delete this visitphotos?';
+$lang['visitphotos_edit_heading']			= 'Edit VisitPhotos';
+
+// Activities
+$lang['visitphotos_act_create_record']			= 'Created record with ID';
+$lang['visitphotos_act_edit_record']			= 'Updated record with ID';
+$lang['visitphotos_act_delete_record']			= 'Deleted record with ID';

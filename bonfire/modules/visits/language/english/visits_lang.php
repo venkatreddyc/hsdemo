@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['visits_manage']			= 'Manage visits';
+$lang['visits_edit']				= 'Edit';
+$lang['visits_true']				= 'True';
+$lang['visits_false']				= 'False';
+$lang['visits_create']			= 'Create';
+$lang['visits_list']				= 'List';
+$lang['visits_new']				= 'New';
+$lang['visits_edit_text']			= 'Edit this to suit your needs';
+$lang['visits_no_records']			= 'There aren\'t any visits in the system.';
+$lang['visits_create_new']			= 'Create a new visits.';
+$lang['visits_create_success']			= 'visits successfully created.';
+$lang['visits_create_failure']			= 'There was a problem creating the visits: ';
+$lang['visits_create_new_button']			= 'Create New visits';
+$lang['visits_invalid_id']			= 'Invalid visits ID.';
+$lang['visits_edit_success']			= 'visits successfully saved.';
+$lang['visits_edit_failure']			= 'There was a problem saving the visits: ';
+$lang['visits_delete_success']			= 'record(s) successfully deleted.';
+$lang['visits_delete_failure']			= 'We could not delete the record: ';
+$lang['visits_delete_error']			= 'You have not selected any records to delete.';
+$lang['visits_actions']			= 'Actions';
+$lang['visits_cancel']			= 'Cancel';
+$lang['visits_delete_record']			= 'Delete this visits';
+$lang['visits_delete_confirm']			= 'Are you sure you want to delete this visits?';
+$lang['visits_edit_heading']			= 'Edit visits';
+
+// Activities
+$lang['visits_act_create_record']			= 'Created record with ID';
+$lang['visits_act_edit_record']			= 'Updated record with ID';
+$lang['visits_act_delete_record']			= 'Deleted record with ID';

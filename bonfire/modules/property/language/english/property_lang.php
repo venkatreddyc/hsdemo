@@ -1,0 +1,33 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['property_manage']			= 'Manage property';
+$lang['property_edit']				= 'Edit';
+$lang['property_true']				= 'True';
+$lang['property_false']				= 'False';
+$lang['property_create']			= 'Create';
+$lang['property_list']				= 'List';
+$lang['property_new']				= 'New';
+$lang['property_edit_text']			= 'Edit this to suit your needs';
+$lang['property_no_records']			= 'There aren\'t any property in the system.';
+$lang['property_create_new']			= 'Create a new property.';
+$lang['property_create_success']		= 'property successfully created.';
+$lang['property_create_failure']		= 'There was a problem creating the property: ';
+$lang['property_create_new_button']		= 'Create New property';
+$lang['property_invalid_id']			= 'Invalid property ID.';
+$lang['property_edit_success']			= 'property successfully saved.';
+$lang['property_edit_failure']			= 'There was a problem saving the property: ';
+$lang['property_delete_success']		= 'record(s) successfully deleted.';
+$lang['property_delete_failure']		= 'We could not delete the record: ';
+$lang['property_delete_error']			= 'You have not selected any records to delete.';
+$lang['property_actions']			= 'Actions';
+$lang['property_cancel']			= 'Cancel';
+$lang['property_delete_record']			= 'Delete this property';
+$lang['property_delete_confirm']		= 'Are you sure you want to delete this property?';
+$lang['property_edit_heading']			= 'Edit property';
+//$lang['property_view']			= 'View property';
+$lang['property_view_failure']			= 'There was a problem viewing the property: ';
+
+// Activities
+$lang['property_act_create_record']			= 'Created record with ID';
+$lang['property_act_edit_record']			= 'Updated record with ID';
+$lang['property_act_delete_record']			= 'Deleted record with ID';
+$lang['property_act_view_record']			= 'View record with ID';
