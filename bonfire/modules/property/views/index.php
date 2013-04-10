@@ -1,5 +1,5 @@
 <div>
-	<h1 class="page-header">property</h1>
+	<h1 class="page-header">property - Home Index</h1>
 </div>
 
 <br />

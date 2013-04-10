@@ -1,5 +1,8 @@
 <div class="admin-box">
 	<h3>visits</h3>
+        
+        <?php $roleid = $this->auth->role_id(); ?>
+        
 	<?php echo form_open($this->uri->uri_string()); ?>
 		<table class="table table-striped">
 			<thead>
@@ -9,11 +12,25 @@
 					<?php endif;?>
 					
 					<th>pid</th>
+                                        <th>username</th>
+                                        
 					<th>date</th>
 					<th>pinfo</th>
 					<th>file</th>
 				</tr>
 			</thead>
+                        
+            <?php if ($roleid == 4)  {
+                    $this->load->model('property/property_model', 'property_model');
+                    $records02 = $this->property_model->find_all_by('property_username',$current_user->username);
+                    
+                } else {
+                    $this->load->model('property/property_model', 'property_model');
+                    $records02 = $this->property_model->find_all();
+                }
+            ?>        
+
+                        
 			<?php if (isset($records) && is_array($records) && count($records)) : ?>
 			<tfoot>
 				<?php if ($this->auth->has_permission('Visits.Content.Delete')) : ?>
@@ -39,7 +56,8 @@
 				<?php else: ?>
 				<td><?php echo $record->visits_pid ?></td>
 				<?php endif; ?>
-			
+                                
+                                <td><?php // echo $record->visits_username ?></td>
 				<td><?php echo $record->visits_date?></td>
 				<td><?php echo $record->visits_pinfo?></td>
 				<td><?php echo $record->visits_file?></td>

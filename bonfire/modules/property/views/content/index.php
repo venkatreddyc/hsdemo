@@ -1,5 +1,9 @@
 <div class="admin-box">
-	<h3>property</h3>
+	
+    <h3>Customer Property Details </h3>
+         
+    <?php $roleid = $this->auth->role_id(); ?>
+        
 	<?php echo form_open($this->uri->uri_string()); ?>
 		<table class="table table-striped">
 			<thead>
@@ -15,6 +19,17 @@
 					<th>file</th>
 				</tr>
 			</thead>
+
+            <?php if ($roleid == 4)  {
+                    $this->load->model('property/property_model', 'property_model');
+                    $records = $this->property_model->find_all_by('property_username',$current_user->username);
+                } else {
+                    $this->load->model('property/property_model', 'property_model');
+                    $records = $this->property_model->find_all();
+                }
+            ?>        
+
+                        
 			<?php if (isset($records) && is_array($records) && count($records)) : ?>
 			<tfoot>
 				<?php if ($this->auth->has_permission('Property.Content.Delete')) : ?>
