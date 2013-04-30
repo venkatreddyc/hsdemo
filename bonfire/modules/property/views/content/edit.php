@@ -19,6 +19,15 @@ $id = isset($property['pid']) ? $property['pid'] : '';
     
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
+        
+        <div class="control-group <?php echo form_error('pid') ? 'error' : ''; ?>">
+            <?php echo form_label('Property ID'. lang('bf_form_label_required'), 'pid', array('class' => "control-label") ); ?>
+            <div class='controls'>
+        <input id="pid" type="text" name="pid" maxlength="25" value="<?php echo set_value('pid', isset($property['pid']) ? $property['pid'] : ''); ?>"  />
+        <span class="help-inline"><?php echo form_error('pid'); ?></span>
+        </div>
+
+        
         <div class="control-group <?php echo form_error('property_username') ? 'error' : ''; ?>">
             <?php echo form_label('username'. lang('bf_form_label_required'), 'property_username', array('class' => "control-label") ); ?>
             <div class='controls'>
@@ -63,10 +72,17 @@ $id = isset($property['pid']) ? $property['pid'] : '';
         </div>
 
         <div class="control-group <?php echo form_error('property_landmark') ? 'error' : ''; ?>">
-            <?php echo form_label('landmark'. lang('bf_form_label_required'), 'property_landmark', array('class' => "control-label") ); ?>
+            <?php echo form_label('Property Landmark'. lang('bf_form_label_required'), 'property_landmark', array('class' => "control-label") ); ?>
             <div class='controls'>
-        <input id="property_info" type="text" name="property_landmark" maxlength="255" value="<?php echo set_value('property_landmark', isset($property['property_landmark']) ? $property['property_landmark'] : ''); ?>"  />
+        <input id="property_landmark" type="text" name="property_landmark" maxlength="255" value="<?php echo set_value('property_landmark', isset($property['property_landmark']) ? $property['property_landmark'] : ''); ?>"  />
         <span class="help-inline"><?php echo form_error('property_landmark'); ?></span>
+        </div>
+
+        <div class="control-group <?php echo form_error('property_mapurl') ? 'error' : ''; ?>">
+            <?php echo form_label(' Google Map URL'. lang('bf_form_label_required'), 'property_mapurl', array('class' => "control-label") ); ?>
+            <div class='controls'>
+        <input id="property_mapurl" type="text" name="property_mapurl" maxlength="255" value="<?php echo set_value('property_mapurl', isset($property['property_mapurl']) ? $property['property_mapurl'] : ''); ?>"  />
+        <span class="help-inline"><?php echo form_error('property_mapurl'); ?></span>
         </div>
             
 

@@ -58,6 +58,7 @@
 				<td><?php echo anchor(SITE_AREA .'/content/property/edit/'. $record->pid, '<i class="icon-pencil">&nbsp;</i>' .  $record->property_username) ?></td>
 				<?php else: ?>
 				<td><?php echo $record->property_username ?></td>
+                                <td><?php echo $record->userid ?></td>
 				<?php endif; ?>
 			
 				<td><?php echo $record->property_address?></td>
@@ -67,7 +68,8 @@
                                 
                                 <td><?php echo $record->property_landmark?></td>
                                 <td> <a href="<?php echo $record->property_mapurl?>" > Map Location </a></td>
-                              
+                           
+                                
                                 
 				</tr>
 			<?php endforeach; ?>
