@@ -1,6 +1,7 @@
 <div class="admin-box">
 	
     <h3>Customer Property Details </h3>
+    
          
     <?php $roleid = $this->auth->role_id(); ?>
         
@@ -29,7 +30,7 @@
                 } else {
                     $this->load->model('property/property_model', 'property_model');
                     $records = $this->property_model->find_all();
-                }
+                } 
             ?>        
 
                         

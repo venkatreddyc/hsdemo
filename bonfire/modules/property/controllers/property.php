@@ -27,6 +27,7 @@ class property extends Front_Controller {
 	public function index()
 	{
 
+                    
             
 		$records = $this->property_model->find_all();
                 

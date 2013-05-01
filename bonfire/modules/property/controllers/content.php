@@ -52,6 +52,7 @@ class content extends Admin_Controller {
 			}
 		}
 
+                
 		$records = $this->property_model->find_all();
 
 		Template::set('records', $records);

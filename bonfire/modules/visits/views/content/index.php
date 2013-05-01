@@ -42,31 +42,31 @@
             </tfoot>
 
             <tbody>
-                <?php foreach ($property_records as $record) : ?>
+                <?php foreach ($property_records as $prop_record) : ?>
                     <?php
                          $this->load->model('visits/visits_model', 'visits_model');
-                          $visit_records = $this->visits_model->find_all_by('visits_pid',$record->pid);
+                          $visit_records = $this->visits_model->find_all_by('visits_pid',$prop_record->pid);
                     ?>
 
                     <?php if (is_array($visit_records)) : ?>
-                        <?php foreach ($visit_records as $visit_record) : ?>
+                        <?php foreach ($visit_records as $prop_visit_record) : ?>
                             <tr>
                                 <?php if ($this->auth->has_permission('Visits.Content.Delete')) : ?>
-                                    <td><input type="checkbox" name="checked[]" value="<?php echo $visit_record->vid ?>" /></td>
+                                    <td><input type="checkbox" name="checked[]" value="<?php echo $prop_visit_record->vid ?>" /></td>
                                 <?php endif;?>
 
                                 <?php if ($this->auth->has_permission('Visits.Content.Edit')) : ?>
-                                    <td><?php echo anchor(SITE_AREA .'/content/visits/edit/'. $visit_record->vid, '<i class="icon-pencil">&nbsp;</i>' .  $visit_record->visits_pid) ?></td>
+                                    <td><?php echo anchor(SITE_AREA .'/content/visits/edit/'. $prop_visit_record->vid, '<i class="icon-pencil">&nbsp;</i>' .  $prop_visit_record->visits_pid) ?></td>
                                 <?php else: ?>
-                                    <td><?php echo $visit_record->visits_pid ?></td>
+                                    <td><?php echo $prop_visit_record->visits_pid ?></td>
                                 <?php endif; ?>                       
 
-                                <td><?php echo $visit_record->vid ?></td>
-                                <td><?php echo $record->property_username ?></td>
-                                <td><?php echo $record->userid ?></td>
-                                <td><?php echo $visit_record->visits_date?></td>
-                                <td><?php echo $visit_record->visits_pinfo?></td>
-                                <td><?php echo $visit_record->visits_file?></td>                                                       
+                                <td><?php echo $prop_visit_record->vid ?></td>
+                                <td><?php echo $prop_record->property_username ?></td>
+                                <td><?php echo $prop_record->userid ?></td>
+                                <td><?php echo $prop_visit_record->visits_date?></td>
+                                <td><?php echo $prop_visit_record->visits_pinfo?></td>
+                                <td><?php echo $prop_visit_record->visits_file?></td>                                                       
                            </tr>
                         <?php endforeach; ?>
                     <?php endif;?>
