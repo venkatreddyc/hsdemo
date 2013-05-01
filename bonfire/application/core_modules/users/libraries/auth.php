@@ -391,7 +391,28 @@ class Auth
 
 	}//end user_id()
 
-	//--------------------------------------------------------------------
+	/**
+	 * Retrieves the user_id from the current session.
+	 *
+	 * @access public
+	 *
+	 * @return string
+	 */
+	public function user_name()
+	{
+		return (string) $this->ci->session->userdata('username');
+
+	}//end user_id()
+        
+	public function userdata()
+	{
+		return $this->ci->session->all_userdata();
+
+	}//end user_id()
+        
+
+
+        //--------------------------------------------------------------------
 
 	/**
 	 * Retrieves the logged identity from the current session.

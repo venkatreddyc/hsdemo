@@ -2,11 +2,7 @@
 
 class content extends Admin_Controller {
 
-	//--------------------------------------------------------------------
-
-
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 
 		$this->auth->restrict('Property.Content.View');
@@ -14,95 +10,77 @@ class content extends Admin_Controller {
 		$this->lang->load('property');
 		
 		Template::set_block('sub_nav', 'content/_sub_nav');
-	}
-
-	//--------------------------------------------------------------------
-
+	} // end of __construct method
 
 
 	/*
 		Method: index()
-
 		Displays a list of form data.
 	*/
-	public function index()
-	{
-
+	public function index(){
 		// Deleting anything?
-		if (isset($_POST['delete']))
-		{
+		if (isset($_POST['delete']))	{
 			$checked = $this->input->post('checked');
-
-			if (is_array($checked) && count($checked))
-			{
+			if (is_array($checked) && count($checked)) {
 				$result = FALSE;
-				foreach ($checked as $pid)
-				{
+				foreach ($checked as $pid){
 					$result = $this->property_model->delete($pid);
 				}
 
-				if ($result)
-				{
+				if ($result){
 					Template::set_message(count($checked) .' '. lang('property_delete_success'), 'success');
-				}
-				else
-				{
+				} else {
 					Template::set_message(lang('property_delete_failure') . $this->property_model->error, 'error');
 				}
-			}
-		}
+			} // end if for check
+		} // end if for post delete
 
-                
-		$records = $this->property_model->find_all();
+                $roleid = $this->auth->role_id(); 
+                $user_id = $this->auth->user_id(); 
+         
+                if ($roleid == 4)  {
+                    $this->load->model('property/property_model', 'property_model');
+                    $records = $this->property_model->find_all_by('userid',$user_id);
+                } else {
+                    $this->load->model('property/property_model', 'property_model');
+                    $records = $this->property_model->find_all();
+                } 
 
 		Template::set('records', $records);
 		Template::set('toolbar_title', 'Manage property');
 		Template::render();
-	}
-
-	//--------------------------------------------------------------------
-
-
+	} // end of index method
 
 	/*
 		Method: create()
-
 		Creates a property object.
 	*/
-	public function create()
-	{
+	public function create(){
 		$this->auth->restrict('Property.Content.Create');
-
-		if ($this->input->post('save'))
-		{
-			if ($insert_id = $this->save_property())
-			{
+		if ($this->input->post('save'))	{
+			if ($insert_id = $this->save_property()){
 				// Log the activity
 				$this->activity_model->log_activity($this->current_user->id, lang('property_act_create_record').': ' . $insert_id . ' : ' . $this->input->ip_address(), 'property');
-
 				Template::set_message(lang('property_create_success'), 'success');
 				Template::redirect(SITE_AREA .'/content/property');
-			}
-			else
-			{
+			} else	{
 				Template::set_message(lang('property_create_failure') . $this->property_model->error, 'error');
 			}
 		}
 		Assets::add_module_js('property', 'property.js');
-
 		Template::set('toolbar_title', lang('property_create') . ' property');
 		Template::render();
-	}
+	} // end of create()
 
 	//--------------------------------------------------------------------
 
 
 
 	/*
-		Method: edit()
-
+		Method: view()
 		Allows editing of property data.
 	*/
+        
 	public function view()
 	{
 		$id = $this->uri->segment(5);
@@ -152,19 +130,17 @@ class content extends Admin_Controller {
 		Template::set('toolbar_title', lang('property_edit') . ' property');
 		Template::render();
 	}
+        
 
-	public function edit()
-	{
+        public function edit() {
 		$id = $this->uri->segment(5);
-
 		if (empty($id))
 		{
 			Template::set_message(lang('property_invalid_id'), 'error');
 			redirect(SITE_AREA .'/content/property');
 		}
 
-		if (isset($_POST['save']))
-		{
+		if (isset($_POST['save'])) {
 			$this->auth->restrict('Property.Content.Edit');
 
 			if ($this->save_property('update', $id))
@@ -201,12 +177,11 @@ class content extends Admin_Controller {
 
 		Template::set('toolbar_title', lang('property_edit') . ' property');
 		Template::render();
-	}
+	} // end of edit()
 	
 	
 	
-	 public function do_upload($field = 'userfile')
-      {
+	public function do_upload($field = 'userfile')    {
   
       // Is $_FILES[$field] set? If not, no reason to continue.
           if ( ! isset($_FILES[$field]))
@@ -223,12 +198,9 @@ class content extends Admin_Controller {
           }
   
           // Was the file able to be uploaded? If not, determine the reason why.
-          if ( ! is_uploaded_file($_FILES[$field]['tmp_name']))
-          {
+          if ( ! is_uploaded_file($_FILES[$field]['tmp_name']))        {
               $error = ( ! isset($_FILES[$field]['error'])) ? 4 : $_FILES[$field]['error'];
-  
-              switch($error)
-              {
+              switch($error)  {
                   case 1: // UPLOAD_ERR_INI_SIZE
                       $this->set_error('upload_file_exceeds_limit');
                       break;
@@ -395,33 +367,27 @@ class content extends Admin_Controller {
           $this->set_image_properties($this->upload_path.$this->file_name);
   
           return TRUE;
-      }
-       //--------------------------------------------------------------------
-
-
+      } // end of do_upload()
+      
 	//--------------------------------------------------------------------
 	// !PRIVATE METHODS
 	//--------------------------------------------------------------------
 
 	/*
 		Method: save_property()
-
 		Does the actual validation and saving of form data.
-
 		Parameters:
 			$type	- Either "insert" or "update"
 			$id		- The ID of the record to update. Not needed for inserts.
-
 		Returns:
 			An INT id for successful inserts. If updating, returns TRUE on success.
 			Otherwise, returns FALSE.
 	*/
-	private function save_property($type='insert', $id=0)
-	{
+      
+	private function save_property($type='insert', $id=0) {
 		if ($type == 'update') {
 			$_POST['pid'] = $id;
 		}
-
 		
 		$this->form_validation->set_rules('property_username','username','required|trim|xss_clean|max_length[25]');
 		$this->form_validation->set_rules('property_address','address','required|trim|xss_clean|max_length[255]');
@@ -429,8 +395,7 @@ class content extends Admin_Controller {
 		$this->form_validation->set_rules('property_info','info','required|trim|xss_clean|max_length[255]');
 		$this->form_validation->set_rules('property_file','file','required|trim|xss_clean|max_length[255]');
 
-		if ($this->form_validation->run() === FALSE)
-		{
+		if ($this->form_validation->run() === FALSE)	{
 			return FALSE;
 		}
 
@@ -443,28 +408,18 @@ class content extends Admin_Controller {
 		$data['property_info']        = $this->input->post('property_info');
 		$data['property_file']        = $this->input->post('property_file');
 
-		if ($type == 'insert')
-		{
+		if ($type == 'insert')	{
 			$id = $this->property_model->insert($data);
-
-			if (is_numeric($id))
-			{
+			if (is_numeric($id)){
 				$return = $id;
-			} else
-			{
+			} else	{
 				$return = FALSE;
 			}
-		}
-		else if ($type == 'update')
-		{
+		} else if ($type == 'update'){
 			$return = $this->property_model->update($id, $data);
 		}
 
 		return $return;
-	}
-
-	//--------------------------------------------------------------------
-
-
+	} // end of save_property()
 
 }
