@@ -28,8 +28,44 @@
                     $this->load->model('property/property_model', 'property_model');
                     $records02 = $this->property_model->find_all();
                 }
+                
             ?>        
 
+<!--  begin  of test  -->                          
+			<tbody>
+                            <?php if (isset($records02) && is_array($records02) && count($records02)) : ?>
+                                <?php foreach ($records02 as $record) : ?>
+                            
+                                    <?php
+                                         $this->load->model('visits/visits_model', 'visits_model');
+                                          $records03 = $this->visits_model->find_all_by('visits_pid',$record->pid);
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $record->property_username ?></td>
+                                            <td><?php echo $record->pid ?></td>
+                                            <td><?php echo $record->userid ?></td>
+                                            
+                                             <?php foreach ($records03 as $record09) : ?>
+
+                                                   <tr>
+                                                     
+                                                       <td><?php echo $record09->vid ?></td>
+                                                       <td><?php echo $record09->visits_pid ?></td>
+                                                        <td><?php echo $record09->visits_date?></td>
+                                                        <td><?php echo $record09->visits_pinfo?></td>
+                                                        <td><?php echo $record09->visits_file?></td>                                                       
+                                                   </tr>
+                                           <?php endforeach; ?>
+                                            
+                                        </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+				<tr>
+					<td colspan="6">No records found that match your selection.</td>
+				</tr>
+                            <?php endif; ?>
+                        
+       <!--  end of test  -->                 
                         
 			<?php if (isset($records) && is_array($records) && count($records)) : ?>
 			<tfoot>
