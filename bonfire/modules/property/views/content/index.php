@@ -9,10 +9,11 @@
                 <th class="column-check"><input class="check-all" type="checkbox" /></th>
                 <?php endif;?>
                 <th>User Name</th>
+                 <th>Property ID</th>
                 <th>Property Address</th>
                 <th>City</th>
                 <th>Property Info</th>
-                <th>file</th>
+                
                 <th>Property Landmark</th>
                 <th>Property Map URL </th>
             </tr>
@@ -45,11 +46,11 @@
                             <td><?php echo $record->property_username ?></td>
                             <td><?php echo $record->userid ?></td>
                         <?php endif; ?>
-
+                        <td><?php echo $record->pid?></td>
                         <td><?php echo $record->property_address?></td>
                         <td><?php echo $record->property_location?></td>
                         <td><?php echo $record->property_info?></td>
-                        <td><?php echo $record->property_file?></td>
+                        
                         <td><?php echo $record->property_landmark?></td>
                         <td> <a href="<?php echo $record->property_mapurl?>" > Map Location </a></td>
                     </tr>
